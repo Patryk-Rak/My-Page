@@ -1,0 +1,264 @@
+*,html {
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+}
+
+
+body {
+    height: 100%;
+    background-color: white;
+}
+
+
+
+p {
+    font-family: 'Source Sans Pro', sans-serif;
+}
+
+
+
+.main-page-header {            /*SEKCJA Z BANEREM*/
+      width: 100%;
+      height: 50vh;
+      background: url(../img/banner1.jpg) no-repeat 80% 10%;
+      background-attachment: fixed;
+      background-position: center;
+      background-size: cover; 
+}
+
+.main-content {
+
+      width: 75%;
+      margin: 4em auto;
+      font-size: 20px;
+      line-height: 30px;
+      text-align: center;
+}
+
+
+/*-----------------NAV CSS----------------*/
+
+
+nav {
+    position: fixed;
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    min-height: 8vh;
+    background-color: white;
+    opacity: 0.90;
+    font-family: 'Source Sans Pro', sans-serif;
+    transition: 0.75s ease;
+}
+
+.full-white-on-scroll {
+    background-color: white;
+    opacity: 1;
+}
+
+
+
+#brand-image {
+    padding-top: 10px;
+    display: block;
+    height: 7vh;
+}
+
+.logo-hover {
+  position: relative;
+  width: 100%;
+  height: 8vh;
+}
+
+.overlay {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 100%;
+  width: 100%;
+  opacity: 0;
+  transition: .5s ease;
+}
+
+.logo-hover:hover .overlay {
+  opacity: 1;
+}
+
+.nav-links {
+    display: flex;
+    width: 30%;
+    height: 8vh;
+    justify-content: space-around;
+    margin: 0;
+    padding: 0;
+}
+
+.nav-links li {
+    list-style: none;
+}
+
+.nav-links li a {
+    padding-top: 30px;
+    min-height: 8vh;
+    color: black;
+    text-decoration: none;
+    letter-spacing: 2px;
+    font-weight: bold;
+    font-size: 14px;
+    transition: all ease-in-out 300ms;
+}
+
+.nav-links li ul a {
+    padding-top: 20px;
+    min-height: 6vh;
+}
+
+.nav-links li a:hover {
+    color: #cc0000;
+    background-color: #fafafa;
+    
+}
+
+.nav-links li a::after {
+    content: "";
+    width: 0%;
+    height: 3px;
+    display: block;
+    background: #cc0000;
+    transition: all ease-in-out 300ms;
+}
+
+.nav-links li a:hover::after {
+    width: 100%;
+}
+
+.dropdown-menu {
+    margin: 0px;
+    padding: 0px;
+    color: black;
+    background-color: white;
+    position: absolute;
+    border-radius: 0px 0px 4px 4px;
+    border: 0px;
+}
+
+.dropdown-item {
+    padding-left: 16px;
+}
+
+.dropdown .dropdown-menu {
+    -webkit-transition: all 0.5s;
+    -moz-transition: all 0.5s;
+    -ms-transition: all 0.5s;
+    -o-transition: all 0.5s;
+    transition: all 0.5s;
+
+    max-height: 0;
+    display: block;
+    overflow: hidden;
+    opacity: 0;
+}
+
+.dropdown.show .dropdown-menu { /* For Bootstrap 4, use .dropdown.show instead of .dropdown.open */
+    max-height: 500px;
+    opacity: 1;
+}
+
+.burger {
+    display: none;
+}
+
+.burger div {
+    width: 25px;
+    height: 3px;
+    background-color: black;
+    margin: 5px;
+    transition: all 0.3s ease;
+}
+
+
+
+
+
+
+
+
+
+@media screen and (max-width:1280px) {
+    
+.nav-links {
+    display: flex;
+    width: 50%;
+    justify-content: space-around;
+    margin: 0;
+    padding: 0;
+    }
+}
+
+@media screen and (max-width:768px) {
+    
+    body {
+        overflow-x: hidden;
+    }
+    
+    nav {
+        opacity: 1;
+    }
+    
+    .nav-links {
+        position: absolute;
+        right: 0px;
+        height: 50vh;
+        top: 8vh;
+        width: 50%;
+        background-color: white;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        transform: translateX(100%);
+        transition: transform 0.5s ease-in;
+    }
+    
+    .nav-links li {
+        width: 100%;
+        opacity: 0;
+    }
+    
+    .nav-content {
+        display: none;
+    }
+    
+    .burger {
+        display: block;
+        cursor: pointer;
+    }
+}
+
+.nav-active {
+    transform: translateX(0%);
+}
+
+@keyframes navLinkFade {
+    from {
+        opacity: 0;
+        transform: translateX(50%);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0%);
+    }
+}
+
+.toggle .line1 {
+    transform: rotate(-45deg) translate(-5px,6px); 
+}
+.toggle .line2 {
+    opacity: 0;
+}
+.toggle .line3 {
+    transform: rotate(45deg) translate(-5px,-6px);
+}
