@@ -1,0 +1,137 @@
+*,
+html {
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+}
+
+
+body {
+    height: 100%;
+    background-color: white;
+    font-family: 'Source Sans Pro', sans-serif;
+    /*    color: black;*/
+}
+
+
+
+p {
+    font-family: 'Source Sans Pro', sans-serif;
+}
+
+.header-text {
+    text-align: center;
+}
+
+.text-divider {
+    margin: 3em 0em 1em 0em;
+    line-height: 0;
+    text-align: center;
+}
+
+.text-divider span {
+    background-color: #ffffff;
+    padding-left: 0.5em;
+    padding-right: 0.5em;
+}
+
+.text-divider:before {
+    content: " ";
+    display: block;
+    border-top: 2px solid #b30000;
+    border-bottom: 3px solid #f7f7f7;
+}
+
+.main-page-header {
+    /*SEKCJA Z BANEREM*/
+    width: 100%;
+    height: 50vh;
+    background: url(../img/banner2.jpg) no-repeat 70% 10%;
+    background-attachment: fixed;
+    background-position: bottom;
+    background-size: cover;
+}
+
+
+/*CARD STYLE*/
+.card-box {
+    display: flex;
+}
+
+.one-edge-shadow {
+    -webkit-box-shadow: 0 0px 0px 0px black;
+    -moz-box-shadow: 0 0px 0px 0px black;
+    box-shadow: 0 0px 0px 0px black;
+    -webkit-transition-duration: 0.4s;
+    /* Safari */
+    transition-duration: 0.4s;
+}
+
+.one-edge-shadow:hover {
+    -webkit-box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    -moz-box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+.card {
+    position: inherit;
+    margin: auto;
+    margin-top: 50px;
+    margin-bottom: 50px;
+}
+
+
+/*BUTTON HOVER*/
+.btn {
+    border: 1px solid #990000;
+    -webkit-transition-duration: 0.4s;
+    /* Safari */
+    transition-duration: 0.4s;
+}
+
+.btn:hover {
+    background-color: #990000;
+    /* Green */
+    color: white;
+}
+
+
+
+/*TEXT HOVER*/
+.text-hover {
+    color: black;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 20px;
+    transition: all ease-in-out 300ms;
+}
+
+.card:hover h5 {
+    color: #b30000;
+}
+
+.card .text-hover::after {
+    content: "";
+    width: 0%;
+    height: 3px;
+    display: block;
+    background: #990000;
+    transition: all ease-in-out 300ms;
+}
+
+.card:hover .text-hover::after {
+    width: 100%;
+}
+
+
+
+
+
+
+@media screen and (max-width:991px) {
+
+    .card-box {
+        display: block;
+    }
+
+}
